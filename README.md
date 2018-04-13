@@ -1,6 +1,12 @@
 # Example LoRaWAN application for Mbed-OS
 
-This is an example application based on `Mbed-OS` LoRaWAN protocol APIs. The Mbed-OS LoRaWAN stack implementation is compliant with LoRaWAN v1.0.2 specification. 
+This is an example application based on `Mbed-OS` LoRaWAN protocol APIs. The Mbed-OS LoRaWAN stack implementation is compliant with LoRaWAN v1.0.2 specification. The upstream version of this repository is at [ArmMbed/mbed-os-example-lorawan](https://github.com/armmbed/mbed-os-example-lorawan). This repository offers a minimal configuration - meaning no RTOS, and running newlib-nano - to run on the [DISCO-L072CZ-LRWAN1](https://os.mbed.com/platforms/ST-Discovery-LRWAN1/) development board. This example application runs in 7K of RAM (compared to 19K with default configuration).
+
+To build you need to pass in a custom profile via:
+
+```
+$ mbed compile --profile=./profiles/develop.json -m YOUR_BOARD_NAME -t YOUR_TOOLCHAIN
+```
 
 ## Getting started
 
@@ -111,7 +117,7 @@ Use Mbed CLI commands to generate a binary for the application.
 For example:
 
 ```sh
-$ mbed compile -m YOUR_TARGET -t ARM
+$ mbed compile -m YOUR_TARGET -t ARM --profile=./profiles/develop.json
 ```
 
 ## Running the application
